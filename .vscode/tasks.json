@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build (make)",
+      "type": "shell",
+      "command": "make",
+      "options": {
+        "cwd": "${workspaceFolder}/crossword-program-c/crossword-generator"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run with args and save output",
+      "type": "shell",
+      "dependsOn": "Build (make)",
+      "command": "./runcrossword pages.txt > output.txt",
+      "options": {
+        "cwd": "${workspaceFolder}/crossword-program-c/crossword-generator"
+      },
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "detail": "Run runcrossword with user-provided args and save to output.txt"
+    }
+  ]
+}

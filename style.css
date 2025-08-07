@@ -1,0 +1,283 @@
+/* style.css */
+@import url(
+'https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;800&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+
+.game-container {
+    padding: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    min-height: 100vh;
+    align-items: center;
+}
+
+.puzzle-grid {
+    display: grid;
+    grid-template-rows: repeat(13, 40px);
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(13, 40px);
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid green;
+}
+
+.inactive {
+    background-color: green;
+}
+
+h1 {
+    text-align: center;
+    color: green;
+    font-size: 2.2rem;
+}
+
+.number {
+    position: relative;
+    font-weight: 300;
+    color: #000;
+    bottom: 45px;
+    font-size: small;
+    left: 3px;
+    z-index: 10;
+}
+
+input:focus {
+    outline: none;
+    background-color: #bddebe;
+    width: 37.5px;
+    height: 37.5px;
+}
+
+input {
+    display: block;
+    position: relative;
+    font-size: 16px;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border: none;
+    z-index: 1;
+}
+
+.clues {
+    max-width: 40%;
+   
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: green;
+    text-align: center;
+}
+
+#clues-list {
+    line-height: 2.5rem;
+    font-size: 1rem;
+    padding: 10px;
+
+}
+
+#clues-list li {
+   gap: 20px;
+    padding: 0;
+    display: flex;
+    text-align: center;
+    list-style-position: inside;
+    justify-content: space-between;
+    align-items:center ;
+}
+
+button {
+    display: block;
+   
+    padding: 5px;
+    background-color: green;
+    color: #fff;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid transparent;
+}
+
+.h1,.h2,.h3,.h4,.h5,.h6,.h7,.h8,.h9,.h10,.h11 {
+   
+    visibility: hidden;
+    color: green;
+
+}
+
+#show-answers-btn1:hover~.h1 {
+    visibility: visible;
+}
+#show-answers-btn2:hover~.h2{
+    visibility: visible;
+}
+#show-answers-btn3:hover~.h3 {
+    visibility: visible;
+}
+#show-answers-btn4:hover~.h4 {
+    visibility: visible;
+}
+#show-answers-btn5:hover~.h5 {
+    visibility: visible;
+}
+#show-answers-btn6:hover~.h6 {
+    visibility: visible;
+}
+#show-answers-btn7:hover~.h7 {
+    visibility: visible;
+}
+#show-answers-btn8:hover~.h8 {
+    visibility: visible;
+}
+#show-answers-btn9:hover~.h9 {
+    visibility: visible;
+}
+#show-answers-btn10:hover~.h10 {
+    visibility: visible;
+}
+/* #show-answers-btn11:hover~.h11 {
+    visibility: visible;
+} */
+#show-answers-btn11:hover~#show-answers-btn11 {
+    visibility: hidden;
+}
+
+button:hover {
+    background-color: #fff;
+    border: 2px solid green;
+    color: green;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+
+@media screen and (max-width: 980px) {
+    .game-container {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 70px;
+        gap: 30px;
+    }
+
+    .puzzle-grid {
+        display: grid;
+        grid-template-rows: repeat(13, 40px);
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: repeat(13, 40px);
+    }
+
+    .cell {
+        width: 40px;
+        height: 40px;
+    }
+
+    input {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    input:focus {
+        height: 40px;
+        width: 40px;
+    }
+
+    .number {
+        bottom: 47px;
+        font-size: .8rem;
+    }
+
+    .clues {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-container {
+        flex-direction: column;
+        align-items: center;
+         padding-top: 70px;
+        gap: 30px;
+    }
+
+    .puzzle-grid {
+        display: grid;
+        grid-template-rows: repeat(13, 27px);
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: repeat(13, 27px);
+    }
+
+    .cell {
+        width: 27px;
+        height: 27px;
+    }
+
+    ol {
+        line-height: 1rem;
+        font-size: 10px;
+    }
+
+    input {
+        width: 25px;
+        height: 25px;
+        font-size: .5rem;
+    }
+
+    input:focus {
+        height: 27px;
+        width: 27px;
+    }
+
+    .number {
+        bottom: 35px;
+        font-size: .5rem;
+    }
+
+    .clues {
+        max-width: 100%;
+    }
+}
